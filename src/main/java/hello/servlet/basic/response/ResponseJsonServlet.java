@@ -22,7 +22,7 @@ public class ResponseJsonServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
 
         HelloData helloData = new HelloData();
-        helloData.setUsername("Lim");
+        helloData.setUsername("1Lim");
         helloData.setAge(23);
 
         // {"username":"Lim", "age":23}
