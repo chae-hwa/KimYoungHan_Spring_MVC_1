@@ -4,7 +4,9 @@ package hello.servlet.web.frontController.v5;
 import hello.servlet.web.frontController.ModelView;
 import hello.servlet.web.frontController.MyView;
 import hello.servlet.web.frontController.v3.controller.MemberFormControllerV3;
+import hello.servlet.web.frontController.v4.controller.MemberFormControllerV4;
 import hello.servlet.web.frontController.v5.adaptoer.ControllerV3HandlerAdaptor;
+import hello.servlet.web.frontController.v5.adaptoer.ControllerV4HandlerAdaptor;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,10 +34,16 @@ public class FrontControllerServletV5 extends HttpServlet {
         handlerMappingMap.put("/front-controller/v5/v3/members/new-form", new MemberFormControllerV3());
         handlerMappingMap.put("/front-controller/v5/v3/members/save", new MemberFormControllerV3());
         handlerMappingMap.put("/front-controller/v5/v3/members", new MemberFormControllerV3());
+
+        // V4 추가
+        handlerMappingMap.put("/front-controller/v5/v4/members/new-form", new MemberFormControllerV4());
+        handlerMappingMap.put("/front-controller/v5/v4/members/save", new MemberFormControllerV4());
+        handlerMappingMap.put("/front-controller/v5/v4/members", new MemberFormControllerV4());
     }
 
     private void initHandlerAdapters() {
         handlerAdapters.add(new ControllerV3HandlerAdaptor());
+        handlerAdapters.add(new ControllerV4HandlerAdaptor());
     }
 
     @Override
